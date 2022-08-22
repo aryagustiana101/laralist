@@ -16,9 +16,7 @@
                     </div>
 
                     <div>
-                        <x-jet-button type="button">
-                            {{ __('Create List') }}
-                        </x-jet-button>
+                        <livewire:create-list-modal>
                     </div>
                 </div>
 
@@ -46,20 +44,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($lists as $list)
                                     <tr
                                         class="bg-white border-t dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                         <td class="py-4 px-6">
-                                            1
+                                            {{ $loop->iteration }}
                                         </td>
-                                        <td class="py-4 px-6 
-                                            dark:text-white">
-                                            Movie Watch List
-                                        </td>
-                                        <td class="py-4 px-6">
-                                            Basic
+                                        <td class="py-4 px-6 dark:text-white">
+                                            {{ $list->name }}
                                         </td>
                                         <td class="py-4 px-6">
-                                            1
+                                            {{ Str::title($list->type->name) }}
+                                        </td>
+                                        <td class="py-4 px-6">
+                                            {{ $list->body->count() }}
                                         </td>
                                         <td class="py-4 px-6 text-right">
                                             <div
@@ -68,9 +66,9 @@
                                                 <a href="#" class="mr-4">Edit</a>
                                                 <a href="#a">Delete</a>
                                             </div>
-
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -79,4 +77,5 @@
             </div>
         </div>
     </div>
+
 </x-app-layout>
