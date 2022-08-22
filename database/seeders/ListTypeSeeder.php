@@ -15,7 +15,7 @@ class ListTypeSeeder extends Seeder
      */
     public function run()
     {
-        $listTypes = ["basic", "goal", "task", "todo"];
+        $listTypes = ["basic", "todo", "goal", "task"];
 
         foreach ($listTypes as $listType) {
             ListType::create([
