@@ -8,14 +8,72 @@
     <div class="py-12 mx-4 md:mx-0">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="p-6 sm:px-20 border-b border-gray-200">
-                
-                    <div class="mt-8 text-2xl">
-                        Hello, {{ Auth::user()->name }}!
+
+                <div class="p-6 text-base md:flex md:justify-between">
+                    <div class="mb-4 md:mb-0">
+                        <p class="font-semibold">Hello, {{ Auth::user()->name }}</p>
+                        <p class="text-sm">Here you can manage your list</p>
                     </div>
-                
-                    <div class="mt-6 text-gray-600">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quos rem, facere dignissimos cum fugiat tempora quas sunt pariatur voluptatum, quidem, adipisci aperiam aut quibusdam at nemo nihil architecto facilis in molestiae assumenda est nam esse? Itaque consequatur porro incidunt quam sed quisquam quas sunt, eligendi quae quia perspiciatis atque sapiente cupiditate, voluptate eius suscipit laboriosam dicta fuga nulla sequi! Aliquid eum asperiores non reprehenderit explicabo consequuntur, laborum ratione dolore dolorum sed ut fugit doloremque eveniet rerum? Ullam quidem blanditiis ipsa in deserunt nulla quibusdam sint voluptatibus nobis fugiat architecto illum mollitia, enim assumenda odio nostrum laudantium earum numquam! Dolor.
+
+                    <div>
+                        <x-jet-button type="button">
+                            {{ __('Create List') }}
+                        </x-jet-button>
+                    </div>
+                </div>
+
+                <div class="bg-gray-200 bg-opacity-25">
+                    <div class="border-t border-gray-200">
+                        <div class="overflow-x-auto relative">
+                            <table class="w-full text-sm text-left text-gray-600 dark:text-gray-400">
+                                <thead
+                                    class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                    <tr class="dark:border-gray-700">
+                                        <th scope="col" class="py-3 px-6">
+                                            No.
+                                        </th>
+                                        <th scope="col" class="py-3 px-6">
+                                            List
+                                        </th>
+                                        <th scope="col" class="py-3 px-6">
+                                            Type
+                                        </th>
+                                        <th scope="col" class="py-3 px-6">
+                                            Count
+                                        </th>
+                                        <th scope="col" class="py-3 px-6">
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        class="bg-white border-t dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                        <td class="py-4 px-6">
+                                            1
+                                        </td>
+                                        <td class="py-4 px-6 
+                                            dark:text-white">
+                                            Movie Watch List
+                                        </td>
+                                        <td class="py-4 px-6">
+                                            Basic
+                                        </td>
+                                        <td class="py-4 px-6">
+                                            1
+                                        </td>
+                                        <td class="py-4 px-6 text-right">
+                                            <div
+                                                class="flex justify-center items-center text-sm font-semibold text-blue-600 dark:text-blue-500">
+                                                <a href="#" class="mr-4">View</a>
+                                                <a href="#" class="mr-4">Edit</a>
+                                                <a href="#a">Delete</a>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
