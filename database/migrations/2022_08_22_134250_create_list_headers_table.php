@@ -20,6 +20,9 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained()->onDelete('cascade');
             $table->foreignIdFor(ListType::class)->constrained()->onDelete('cascade');
             $table->string('name');
+            $table->boolean('all_completed')->nullable();
+            $table->timestamp('range_start_time')->nullable();
+            $table->timestamp('range_end_time')->nullable();
             $table->timestamps();
         });
     }

@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\ListSeeder;
+use Database\Seeders\UserSeeder;
 use Database\Seeders\ListTypeSeeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             ListTypeSeeder::class,
+            ListSeeder::class
         ]);
     }
 }
