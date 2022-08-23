@@ -27,7 +27,5 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::post('/lists', [ListController::class, 'store'])->name('lists.store');
-    Route::put('/lists/{list}', [ListController::class, 'update'])->name('lists.update');
-    Route::delete('/lists/{list}', [ListController::class, 'destroy'])->name('lists.destroy');
+    Route::resource('lists', ListController::class)->except(['index', 'create', 'edit']);
 });

@@ -11,6 +11,11 @@ use App\Http\Requests\UpdateListRequest;
 
 class ListController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(ListHeader::class, 'list');
+    }
+
     public function store(StoreListRequest $request)
     {
         ListHeader::create([
@@ -25,9 +30,9 @@ class ListController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function show($id)
+    public function show(ListHeader $list)
     {
-        //
+        return $list;
     }
 
     public function update(UpdateListRequest $request, ListHeader $list)

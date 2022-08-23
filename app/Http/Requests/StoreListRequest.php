@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Helpers\Constant;
+use App\Models\ListHeader;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreListRequest extends FormRequest
@@ -14,7 +15,7 @@ class StoreListRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return $this->user()->can('create', ListHeader::class);
     }
 
     /**
