@@ -16,6 +16,11 @@ class ListController extends Controller
         $this->authorizeResource(ListHeader::class, 'list');
     }
 
+    public function index()
+    {
+        return redirect()->route('dashboard');
+    }
+
     public function store(StoreListRequest $request)
     {
         ListHeader::create([

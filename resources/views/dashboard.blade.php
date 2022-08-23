@@ -41,7 +41,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($lists as $list)
+
+                                    @forelse ($lists as $list)
                                     <tr class="bg-white border-t hover:bg-gray-50">
                                         <td class="py-4 px-6">
                                             {{ $loop->iteration }}
@@ -63,7 +64,13 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    @endforeach
+                                    @empty
+                                    <tr class="bg-white border-t hover:bg-gray-50">
+                                        <td class="py-4 px-6" colspan="5">
+                                            <p class="text-center text-gray-600 font-semibold">You have no list</p>
+                                        </td>
+                                    </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>
