@@ -1,5 +1,5 @@
 <div>
-    <button type="button" class="text-right text-sm font-semibold text-blue-600 mr-4" wire:click='open'>Delete</button>
+    <button type="button" class="text-right text-sm font-semibold text-blue-600" wire:click='open'>Delete</button>
 
     <form method="POST" action="{{ route('lists.destroy' , $this->list->id) }}">
         @method('DELETE')

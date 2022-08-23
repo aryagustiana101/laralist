@@ -2,8 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ListController;
+use App\Http\Controllers\BasicListController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('lists', ListController::class)->except(['create', 'edit']);
+
+    Route::post('lists/{list}/basic', [BasicListController::class, 'store'])->name('lists.basic.store');
 });

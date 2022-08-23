@@ -41,7 +41,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     @forelse ($lists as $list)
                                     <tr class="bg-white border-t hover:bg-gray-50">
                                         <td class="py-4 px-6">
@@ -58,7 +57,8 @@
                                         </td>
                                         <td class="py-4 px-6">
                                             <div class="flex justify-center items-center">
-                                                <a href="#" class="mr-4">View</a>
+                                                <a href="{{ route('lists.show', $list->id) }}"
+                                                    class="text-right text-sm font-semibold text-blue-600 mr-4">View</a>
                                                 <livewire:update-list-modal :list="$list">
                                                     <livewire:delete-list-modal :list="$list">
                                             </div>
@@ -67,7 +67,9 @@
                                     @empty
                                     <tr class="bg-white border-t hover:bg-gray-50">
                                         <td class="py-4 px-6" colspan="5">
-                                            <p class="text-center text-gray-600 font-semibold">You have no list</p>
+                                            <p class="text-center text-gray-600 font-semibold">
+                                                You have no list
+                                            </p>
                                         </td>
                                     </tr>
                                     @endforelse

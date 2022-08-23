@@ -37,7 +37,7 @@ class ListController extends Controller
 
     public function show(ListHeader $list)
     {
-        return $list;
+        return view('list.show', compact('list'));
     }
 
     public function update(UpdateListRequest $request, ListHeader $list)
