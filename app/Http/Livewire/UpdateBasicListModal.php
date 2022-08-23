@@ -9,7 +9,6 @@ class UpdateBasicListModal extends Component
     public $list;
     public $basic;
     public $show = false;
-    public $selectedListType;
 
     public function mount($list, $basic)
     {

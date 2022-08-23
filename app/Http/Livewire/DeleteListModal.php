@@ -8,7 +8,6 @@ class DeleteListModal extends Component
 {
     public $list;
     public $show = false;
-    public $selectedListType;
 
     public function mount($list)
     {

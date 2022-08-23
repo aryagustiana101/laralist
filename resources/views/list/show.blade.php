@@ -24,20 +24,10 @@
         </div>
 
         @foreach ($list->body as $body)
-        <div class="max-w-3xl mx-auto mb-3 sm:px-6 lg:px-8">
-            <div class="bg-white shadow-md sm:rounded-lg">
-                <div class="p-4 text-base md:flex md:justify-between">
-                    <div class="mb-2 text-center md:text-start md:mb-0">
-                        <p class="font-semibold">{{ $body->title }}</p>
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <livewire:update-basic-list-modal :list="$list" :basic="$body">
-                            <livewire:delete-basic-list-modal :list="$list" :basic="$body">
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endforeach
+        @if ($list->type->id == App\Helpers\Constant::LIST_TYPE['basic'])
+        <livewire:basic-list :list="$list" :basic="$body">
+            @endif
+            @endforeach
     </div>
 
 </x-app-layout>
