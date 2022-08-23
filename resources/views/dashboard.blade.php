@@ -57,12 +57,11 @@
                                         <td class="py-4 px-6">
                                             {{ $list->body->count() }}
                                         </td>
-                                        <td class="py-4 px-6 text-right">
-                                            <div
-                                                class="flex justify-center items-center text-sm font-semibold text-blue-600 dark:text-blue-500">
+                                        <td class="py-4 px-6">
+                                            <div class="flex justify-center items-center">
                                                 <a href="#" class="mr-4">View</a>
-                                                <a href="#" class="mr-4">Edit</a>
-                                                <a href="#a">Delete</a>
+                                                <livewire:update-list-modal :list="$list">
+                                                    <a href="#a">Delete</a>
                                             </div>
                                         </td>
                                     </tr>
