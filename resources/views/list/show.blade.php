@@ -31,8 +31,8 @@
                         <p class="font-semibold">{{ $body->title }}</p>
                     </div>
                     <div class="flex justify-center items-center">
-                        <livewire:update-list-modal :list="$list">
-                            <livewire:delete-list-modal :list="$list">
+                        <livewire:update-basic-list-modal :list="$list" :basic="$body">
+                            <livewire:delete-basic-list-modal :list="$list" :basic="$body">
                     </div>
                 </div>
             </div>

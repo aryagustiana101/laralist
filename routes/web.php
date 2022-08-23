@@ -27,4 +27,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::resource('lists', ListController::class)->except(['create', 'edit']);
 
     Route::post('lists/{list}/basic', [BasicListController::class, 'store'])->name('lists.basic.store');
+    Route::put('lists/{list}/basic/{basic}', [BasicListController::class, 'update'])->name('lists.basic.update');
+    Route::delete('lists/{list}/basic/{basic}', [BasicListController::class, 'destroy'])->name('lists.basic.destroy');
 });
