@@ -8,18 +8,16 @@
     <div class="py-12 mx-4 md:mx-0">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-
                 <div class="p-6 text-base md:flex md:justify-between">
                     <div class="mb-4 md:mb-0">
                         <p class="font-semibold">Hello, {{ Auth::user()->name }}</p>
                         <p class="text-sm">Here you can manage your list</p>
+                        <x-jet-validation-errors class="mt-4" />
                     </div>
-
                     <div>
                         <livewire:create-list-modal>
                     </div>
                 </div>
-
                 <div class="bg-gray-200 bg-opacity-25">
                     <div class="border-t border-gray-200">
                         <div class="overflow-x-auto relative">

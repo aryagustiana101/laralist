@@ -3,7 +3,7 @@
         {{ __('Create List') }}
     </x-jet-button>
 
-    <form method="POST" action="{{ route('test') }}">
+    <form method="POST" action="{{ route('lists.store') }}">
         @csrf
         <x-jet-dialog-modal wire:model="show">
 
@@ -41,7 +41,6 @@
                             name="range_end_time" />
                     </div>
                 </div>
-
             </x-slot>
 
             <x-slot name="footer">

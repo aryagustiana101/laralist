@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Requests\StoreListRequest;
 use App\Models\ListType;
 use Livewire\Component;
 
