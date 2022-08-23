@@ -7,6 +7,7 @@ use App\Models\ListHeader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreListRequest;
+use App\Http\Requests\UpdateListRequest;
 
 class ListController extends Controller
 {
@@ -29,9 +30,15 @@ class ListController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateListRequest $request, ListHeader $list)
     {
-        //
+
+        $list->update($request->validated());
+
+        session()->flash('flash.banner', 'List updated successfully!');
+        session()->flash('flash.bannerStyle', 'success');
+
+        return redirect()->route('dashboard');
     }
 
     public function destroy($id)

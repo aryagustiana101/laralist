@@ -2,7 +2,8 @@
     <button type="button" class="text-right text-sm font-semibold text-blue-600 dark:text-blue-500 mr-4"
         wire:click='open'>Edit</button>
 
-    <form method="POST" action="{{ route('lists.store') }}">
+    <form method="POST" action="{{ route('lists.update', $list->id) }}">
+        @method('PUT')
         @csrf
         <x-jet-dialog-modal wire:model="show">
 
@@ -20,13 +21,15 @@
                     <x-jet-label for="list_type_id_{{ $this->key }}" value="{{ __('List Type') }}" />
                     <select name="list_type_id" id="list_type_id_{{ $this->key }}"
                         class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                        wire:change="change(document.getElementById('list_type_id_{{ $this->key }}').options[document.getElementById('list_type_id_{{ $this->key }}').selectedIndex].value)">
+                        wire:change="change(document.getElementById('list_type_id_{{ $this->key }}').options[document.getElementById('list_type_id_{{ $this->key }}').selectedIndex].value)"
+                        disabled>
                         @foreach ($listTypes as $listType)
                         <option @selected($list->type->id == $listType->id) value="{{ $listType->id }}">
                             {{ Str::title($listType->name) }}
                         </option>
                         @endforeach
                     </select>
+                    <input type="hidden" name="list_type_id" value="{{ $list->type->id }}">
                 </div>
 
                 <div

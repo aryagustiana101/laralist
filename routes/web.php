@@ -28,4 +28,5 @@ Route::middleware([
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::post('/lists', [ListController::class, 'store'])->name('lists.store');
+    Route::put('/lists/{list}', [ListController::class, 'update'])->name('lists.update');
 });
