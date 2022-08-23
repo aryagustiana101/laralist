@@ -1,6 +1,5 @@
 <div>
-    <button type="button" class="text-right text-sm font-semibold text-blue-600 dark:text-blue-500 mr-4"
-        wire:click='open'>Edit</button>
+    <button type="button" class="text-right text-sm font-semibold text-blue-600 mr-4" wire:click='open'>Edit</button>
 
     <form method="POST" action="{{ route('lists.update', $list->id) }}">
         @method('PUT')

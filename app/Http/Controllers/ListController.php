@@ -32,7 +32,6 @@ class ListController extends Controller
 
     public function update(UpdateListRequest $request, ListHeader $list)
     {
-
         $list->update($request->validated());
 
         session()->flash('flash.banner', 'List updated successfully!');
@@ -41,8 +40,13 @@ class ListController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function destroy($id)
+    public function destroy(ListHeader $list)
     {
-        //
+        $list->delete();
+
+        session()->flash('flash.banner', 'List deleted successfully!');
+        session()->flash('flash.bannerStyle', 'success');
+
+        return redirect()->route('dashboard');
     }
 }

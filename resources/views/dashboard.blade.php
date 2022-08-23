@@ -21,10 +21,9 @@
                 <div class="bg-gray-200 bg-opacity-25">
                     <div class="border-t border-gray-200">
                         <div class="overflow-x-auto relative">
-                            <table class="w-full text-sm text-left text-gray-600 dark:text-gray-400">
-                                <thead
-                                    class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                    <tr class="dark:border-gray-700">
+                            <table class="w-full text-sm text-left text-gray-600 ">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                    <tr>
                                         <th scope="col" class="py-3 px-6">
                                             No.
                                         </th>
@@ -43,12 +42,11 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($lists as $list)
-                                    <tr
-                                        class="bg-white border-t dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <tr class="bg-white border-t hover:bg-gray-50">
                                         <td class="py-4 px-6">
                                             {{ $loop->iteration }}
                                         </td>
-                                        <td class="py-4 px-6 dark:text-white">
+                                        <td class="py-4 px-6">
                                             {{ $list->name }}
                                         </td>
                                         <td class="py-4 px-6">
@@ -61,7 +59,7 @@
                                             <div class="flex justify-center items-center">
                                                 <a href="#" class="mr-4">View</a>
                                                 <livewire:update-list-modal :list="$list">
-                                                    <a href="#a">Delete</a>
+                                                    <livewire:delete-list-modal :list="$list">
                                             </div>
                                         </td>
                                     </tr>

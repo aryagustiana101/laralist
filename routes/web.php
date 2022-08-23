@@ -29,4 +29,5 @@ Route::middleware([
 
     Route::post('/lists', [ListController::class, 'store'])->name('lists.store');
     Route::put('/lists/{list}', [ListController::class, 'update'])->name('lists.update');
+    Route::delete('/lists/{list}', [ListController::class, 'destroy'])->name('lists.destroy');
 });
