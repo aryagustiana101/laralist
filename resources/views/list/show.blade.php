@@ -18,6 +18,9 @@
                         @if ($list->type->id == App\Helpers\Constant::LIST_TYPE['basic'])
                         <livewire:create-basic-list-modal :list="$list">
                             @endif
+                            @if ($list->type->id == App\Helpers\Constant::LIST_TYPE['todo'])
+                            <livewire:create-todo-list-modal :list="$list">
+                                @endif
                     </div>
                 </div>
             </div>
@@ -27,7 +30,10 @@
         @if ($list->type->id == App\Helpers\Constant::LIST_TYPE['basic'])
         <livewire:basic-list :list="$list" :basic="$body">
             @endif
-            @endforeach
+            @if ($list->type->id == App\Helpers\Constant::LIST_TYPE['todo'])
+            <livewire:todo-list :list="$list" :basic="$body">
+                @endif
+                @endforeach
     </div>
 
 </x-app-layout>

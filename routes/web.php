@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\BasicListController;
@@ -29,4 +28,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('lists/{list}/basic', [BasicListController::class, 'store'])->name('lists.basic.store');
     Route::put('lists/{list}/basic/{basic}', [BasicListController::class, 'update'])->name('lists.basic.update');
     Route::delete('lists/{list}/basic/{basic}', [BasicListController::class, 'destroy'])->name('lists.basic.destroy');
+
+    Route::post('lists/{list}/todo', [TodoListController::class, 'store'])->name('lists.todo.store');
+    Route::put('lists/{list}/todo/{todo}', [TodoListController::class, 'update'])->name('lists.todo.update');
+    Route::delete('lists/{list}/todo/{todo}', [TodoListController::class, 'destroy'])->name('lists.todo.destroy');
 });
